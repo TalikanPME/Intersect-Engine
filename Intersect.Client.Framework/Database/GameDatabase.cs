@@ -75,7 +75,7 @@ public abstract partial class GameDatabase
 
     public bool EnableScrollingWorldZoom { get; set; }
 
-    public float WorldZoom { get; set; } = 1.0f;
+    public float WorldZoom { get; set; } = 2.0f;
 
     public abstract void DeletePreference(string key);
 

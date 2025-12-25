@@ -95,10 +95,10 @@ internal sealed class BuiltinControlsProvider : IControlsProvider
             { Control.OpenAdminPanel, new ControlMapping(new ControlBinding(Keys.None, Keys.Insert), ControlBinding.Default) },
             { Control.ToggleGui, new ControlMapping(new ControlBinding(Keys.None, Keys.F11), ControlBinding.Default) },
             { Control.TurnAround, new ControlMapping(new ControlBinding(Keys.None, Keys.Control), ControlBinding.Default) },
-            { Control.ToggleZoomIn, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
-            { Control.ToggleZoomOut, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
-            { Control.HoldToZoomIn, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
-            { Control.HoldToZoomOut, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
+            //{ Control.ToggleZoomIn, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
+            //{ Control.ToggleZoomOut, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
+            //{ Control.HoldToZoomIn, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
+            //{ Control.HoldToZoomOut, new ControlMapping(ControlBinding.Default, ControlBinding.Default) },
             { Control.ToggleFullscreen, new ControlMapping(new ControlBinding(Keys.Alt, Keys.Enter), ControlBinding.Default) },
 
             // Hotkeys should be at the end of the list

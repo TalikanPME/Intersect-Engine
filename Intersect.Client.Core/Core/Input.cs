@@ -41,26 +41,12 @@ public static partial class Input
 
     public static void HandleZoomOut(bool wrap = true)
     {
-        var nextZoom = Globals.Database.WorldZoom / 2;
-
-        if (nextZoom < Graphics.MinimumWorldScale)
-        {
-            nextZoom = wrap ? Graphics.MaximumWorldScale : Graphics.MinimumWorldScale;
-        }
-
-        Globals.Database.WorldZoom = nextZoom;
+        // Ne rien faire - zoom bloqué 
     }
 
     public static void HandleZoomIn(bool wrap = true)
     {
-        var nextZoom = Globals.Database.WorldZoom * 2;
-
-        if (nextZoom > Graphics.MaximumWorldScale)
-        {
-            nextZoom = wrap ? Graphics.MinimumWorldScale : Graphics.MaximumWorldScale;
-        }
-
-        Globals.Database.WorldZoom = nextZoom;
+        // Ne rien faire - zoom bloqué 
     }
 
     public static void OnKeyPressed(Keys modifier, Keys key)

@@ -835,8 +835,8 @@ public partial class SettingsWindow : Window
             return;
         }
 
-        _worldScale.IsHidden = false;
-        _worldScale.IsDisabled = false;
+        _worldScale.IsHidden = true;
+        _worldScale.IsDisabled = true;
         _worldScale.SetToolTipText(null);
 
         var worldScaleNotches = new double[] { 1, 2, 4 }.Select(n => n * Graphics.MinimumWorldScale).ToList();
