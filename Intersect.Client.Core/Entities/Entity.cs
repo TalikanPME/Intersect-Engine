@@ -1383,56 +1383,58 @@ public partial class Entity : IEntity
     {
         switch (direction)
         {
+            // --- Les 4 directions cardinales (existantes) ---
+            case Direction.Down:
+                return 0;
             case Direction.Left:
-            case Direction.DownLeft when _lastDirection == Direction.Left:
-            case Direction.UpLeft when _lastDirection == Direction.Left:
                 return 1;
-
             case Direction.Right:
-            case Direction.DownRight when _lastDirection == Direction.Right:
-            case Direction.UpRight when _lastDirection == Direction.Right:
                 return 2;
-
             case Direction.Up:
-            case Direction.UpLeft when _lastDirection != Direction.Left:
-            case Direction.UpRight when _lastDirection != Direction.Right:
                 return 3;
 
-            case Direction.Down:
-            case Direction.DownLeft when _lastDirection != Direction.Left:
-            case Direction.DownRight when _lastDirection != Direction.Right:
+            // --- Les 4 nouvelles directions diagonales ---
+            case Direction.DownLeft:
+                return 4;
+            case Direction.DownRight:
+                return 5;
+            case Direction.UpLeft:
+                return 6;
+            case Direction.UpRight:
+                return 7;
+
             default:
-                return 0;
+                return 0; // Sécurité (par défaut vers le bas)
         }
     }
 
     public void PickLastDirection(Direction direction)
-    {
+      {
         switch (direction)
         {
-            case Direction.Left:
-            case Direction.DownLeft when _lastDirection == Direction.Left:
-            case Direction.UpLeft when _lastDirection == Direction.Left:
-                _lastDirection = Direction.Left;
-                break;
-
-            case Direction.Right:
-            case Direction.DownRight when _lastDirection == Direction.Right:
-            case Direction.UpRight when _lastDirection == Direction.Right:
-                _lastDirection = Direction.Right;
-                break;
-
-            case Direction.Up:
-            case Direction.UpLeft when _lastDirection != Direction.Left:
-            case Direction.UpRight when _lastDirection != Direction.Right:
-                _lastDirection = Direction.Up;
-                break;
-
-            case Direction.Down:
-            case Direction.DownLeft when _lastDirection != Direction.Left:
-            case Direction.DownRight when _lastDirection != Direction.Right:
-            default:
-                _lastDirection = Direction.Down;
+          case Direction.Left:
+          case Direction.DownLeft when _lastDirection == Direction.Left:
+         case Direction.UpLeft when _lastDirection == Direction.Left:
+              _lastDirection = Direction.Left;
+              break;
+    
+          case Direction.Right:
+          case Direction.DownRight when _lastDirection == Direction.Right:
+          case Direction.UpRight when _lastDirection == Direction.Right:
+              _lastDirection = Direction.Right;
+              break;
+    
+           case Direction.Up:
+          case Direction.UpLeft when _lastDirection != Direction.Left:
+          case Direction.UpRight when _lastDirection != Direction.Right:
+               _lastDirection = Direction.Up;
+               break;
+    
+           case Direction.Down:
+           case Direction.DownLeft when _lastDirection != Direction.Left:
+          case Direction.DownRight when _lastDirection != Direction.Right:
+           default:
+               _lastDirection = Direction.Down;
                 break;
         }
     }

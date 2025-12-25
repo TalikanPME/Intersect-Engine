@@ -1,4 +1,4 @@
-﻿using Intersect.Framework.Annotations;
+using Intersect.Framework.Annotations;
 using Newtonsoft.Json;
 
 namespace Intersect.Config;
@@ -82,5 +82,5 @@ public partial class SpriteOptions
     /// Currently, Intersect only supports 4 rows of frames for directions.
     /// </summary>
     [JsonIgnore]
-    public int Directions => 4;
+    public int Directions => 8;
 }
